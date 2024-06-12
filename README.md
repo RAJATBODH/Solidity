@@ -20,10 +20,10 @@ No installation is required as Remix is an online IDE.
 
 Executing the Program:
 
-// SPDX-License-Identifier: MIT
-pragma solidity >=0.6.12 <0.9.0;
-
-contract Token {
+    // SPDX-License-Identifier: MIT
+    pragma solidity >=0.6.12 <0.9.0;
+    
+    contract Token {
 
     // public variables here
     string public tokenName = "Rajat Bodh";
@@ -44,9 +44,9 @@ contract Token {
         if(balances[tokenAddress] >= value) {
             totalSupply -= value;
             balances[tokenAddress] -= value;
-        }
+            }
+        }    
     }
-}
 
 Open Remix IDE in your web browser.
 Create a new file and name it MyToken.sol.
