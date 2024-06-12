@@ -19,6 +19,31 @@ Visit the Remix IDE website.
 No installation is required as Remix is an online IDE.
 Executing the Program:
 
+// SPDX-License-Identifier: MIT
+pragma solidity >=0.6.12 <0.9.0;
+
+contract Token {
+
+    // public variables here
+    string public tokenName = "Rajat Bodh";
+    string public tokenAbbrv = "Raj";
+    uint public totalSupply = 0;
+    // mapping variable here
+    mapping(address => uint) public balances;
+    // mint function
+    function mint(address tokenAddress, uint value) public {
+        totalSupply += value;
+        balances[tokenAddress] += value;
+    }
+    // burn function
+    function burn(address tokenAddress, uint value) public {
+        if(balances[tokenAddress] >= value) {
+            totalSupply -= value;
+            balances[tokenAddress] -= value;
+        }
+    }
+}
+
 Open Remix IDE in your web browser.
 Create a new file and name it MyToken.sol.
 Compile the contract by selecting the "Solidity Compiler" tab and clicking "Compile MyToken.sol".
